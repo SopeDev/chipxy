@@ -1,0 +1,140 @@
+# Cursor Design Rules: Chipxy Jewelry
+
+## 1. Brand Essence
+Chipxy is an elegant, minimalist jewelry brand that celebrates sophistication through simplicity. The digital experience should feel editorial, refined, and sensual without excess. Design choices must emphasize light, texture, and negative space — allowing each product and photograph to breathe.
+
+From the client:
+"Somos una marca de joyería que combina acero inoxidable y chapa de oro que mezcla lo atemporal con las tendencias del momento: collares, pulseras, anillos y aretes diseñados para acompañar cada momento. Nuestra misión es ofrecer accesorios de calidad, versátiles y accesibles que realcen el estilo personal y hagan sentir a cada cliente especial todos los días.
+Nuestra inspiración no solo viene de la moda, sino del corazón. Chipxy nació con la intención de aportar a una causa noble: apoyar a los animalitos que esperan encontrar un hogar lleno de amor. Porque en Chipxy creemos que la verdadera joya es ayudar, y por eso parte de este proyecto nace del deseo de brindar esperanza y cuidado a quienes más lo necesitan.
+
+Operando desde 2022 – Ubicados en: Rosario 13025, Hipodromo Dos, 22195 Tijuana, B.C.
+
+Nuestro sitio está pensado principalmente para clientes finales, en especial mujeres que aman los accesorios con personalidad, pero también contamos con opciones para hombres que buscan detalles con estilo.
+El rango de edad va de 15 a 60 años, personas que disfrutan de la moda, las tendencias y las piezas atemporales que elevan cualquier look, desde lo casual hasta lo elegante.
+
+Diseñar una tienda en línea práctica y llamativa, donde los clientes puedan explorar y comprar nuestra joyería de forma sencilla, rápida y segura.
+La experiencia de compra incluirá métodos de pago fáciles y confiables, así como opciones de envío accesibles y sin complicaciones, para que recibir cada pieza sea tan agradable como elegirla."
+
+**Keywords:** refined, editorial, minimalist, feminine, confident, timeless, soft contrast.
+
+---
+
+## 2. Color Palette
+
+| Color | HEX | Use |
+|-------|------|-----|
+| Eerie Black | `#1E1E1E` | Backgrounds, typography accents |
+| Mindaro | `#ECFFB0` | Highlight / accent (hover states, buttons, fine lines) |
+| Seashell | `#FFF7F0` | Base background for light sections |
+| Ivory | `#FCFFF3` | Subtle backgrounds, product detail panels |
+| Baby Powder | `#FBFFFD` | Text blocks or whitespace near imagery |
+
+**Guidelines:**
+- Maintain high contrast between jewelry (gold/silver) and background.
+- Avoid using black text on pure white; prefer dark gray (`#1E1E1E`) on off-whites.
+- Accent color (`#ECFFB0`) should be used sparingly — for hover effects or visual emphasis.
+
+---
+
+## 3. Typography
+
+**Primary Font (Logo + Headings):**  
+*Neue World* by PangramPangram — Regular
+Used for main titles and hero headers. Large sizes, tight kerning, generous line height.
+
+**Secondary Font (Body / Captions):**  
+*Sizmo Pro* — Regular / Medium / Bold  
+Clean, neutral sans-serif for product info, buttons, and descriptions.
+
+**Auxiliary Font (Accents / Editorial details):**  
+*Drummond Variable Italic* — Regular / Medium / Bold
+Used for quotes, section intros, or smaller subtext.
+
+**Web-safe fallback stack:**
+```css
+font-family: 'Neue World', 'Playfair Display', 'Times New Roman', serif;
+font-family: 'Sizmo Pro', 'Inter', 'Helvetica Neue', sans-serif;
+```
+
+---
+
+## 4. Layout & Spacing
+
+- **Grid:** 12-column, max width `1440px`, content width `1280px`.
+- **Whitespace:** Minimum `80px` vertical separation between sections.
+- **Hero:** Left-aligned or centered copy over soft off-white or monochrome background.
+- **Products:** 3–4 column grid, card width fixed, aspect ratio `4:5`.
+- **Buttons:** Border-radius `0`, padding `12px 28px`, font-size `0.95rem`.
+  - Primary: transparent background + `#1E1E1E` border
+  - Hover: `background: #ECFFB0; color: #1E1E1E;`
+
+**Section balance:**
+- Each section must prioritize visual rest; no more than one accent per view.
+- Align images and text through a shared baseline grid.
+
+---
+
+## 5. Image Guidelines
+
+- Use **full-bleed layouts** for hero and campaign imagery.
+- Maintain **pure white** or **soft ivory** backgrounds for product detail shots.
+- Prefer **tight crops** on jewelry with visible skin tones to convey warmth and texture.
+- Lifestyle images should fade naturally into light neutral backgrounds.
+- Avoid harsh filters; keep tone grading subtle to enhance metal sheen and skin glow.
+
+**Editorial tone:** Bright whites, smooth shadows, soft golden reflections.
+
+---
+
+## 6. Motion & Interactivity
+
+- Subtle fade-in and parallax scroll for hero imagery.
+- Product card hover: `scale(1.02)` with ease-in-out 300ms.
+- Header transitions from transparent to solid upon scroll.
+- Smooth section reveals using `opacity` and `translateY(20px)` animations.
+
+**Principle:** Motion should feel luxurious, not energetic.
+
+---
+
+## 7. UI Elements
+
+**Navigation:**  
+Fixed top; transparent at top of page, solid `#1E1E1E` after scroll. Centered logo, minimalist menu.
+
+**Footer:**  
+Black background (`#1E1E1E`), white text, uppercase small caps with increased letter spacing.
+
+**Newsletter Section:**  
+Inline form layout with `email input` + arrow button, inside ivory or seashell background.
+
+**Cart/Wishlist Icons:**  
+Outlined, monochrome, visible hover fill.
+
+---
+
+## 8. Tone of Voice
+
+Chipxy speaks with confidence and subtlety. The tone is editorial, modern, and intimate.  
+Avoid excessive punctuation or exclamation. Keep it timeless, not trendy.
+
+**Examples:**
+- *discover collection*  
+- *crafted to accentuate*  
+- *refined simplicity*  
+
+Use lowercase sparingly for minimalist sophistication.
+
+---
+
+## 9. Implementation Notes for Cursor
+
+- Always import brand colors from a central `theme.js` file.
+- Include typography hierarchy in CSS variables or Tailwind config.
+- For images, maintain aspect ratio and use soft drop shadows only when needed (`rgba(0,0,0,0.05)`).
+- All components should feel consistent with Chipxy's photographic direction: luminous, balanced, minimal.
+
+
+**End of Document**  
+`.cursorrules` for Chipxy Jewelry Design System.
+
