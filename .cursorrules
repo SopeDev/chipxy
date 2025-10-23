@@ -134,7 +134,28 @@ Use lowercase sparingly for minimalist sophistication.
 - For images, maintain aspect ratio and use soft drop shadows only when needed (`rgba(0,0,0,0.05)`).
 - All components should feel consistent with Chipxy's photographic direction: luminous, balanced, minimal.
 
+---
 
-**End of Document**  
-`.cursorrules` for Chipxy Jewelry Design System.
+## 10. Shopify Structure & Development Notes
+
+**Important:** This is a Shopify store with specific structure requirements:
+
+### **Collections vs Products:**
+- **Collections:** Categories/groupings (e.g., "Aretes", "Pulseras", "Collares", "Anillos", "Personalizados")
+- **Products:** Individual jewelry pieces within collections
+- **Featured Products Section:** Shows actual products with hover effects (product detail → lifestyle image)
+- **Collections Section:** Image links/thumbnails that navigate to collection pages
+
+### **Development Phases:**
+1. **Current Phase:** Plain HTML/CSS mockups for client approval
+2. **Future Phase:** Convert to Liquid templates for Shopify theme development
+3. **Final Phase:** Deploy as Shopify theme
+
+### **Navigation Structure:**
+- Main nav: Direct links to collections (Aretes, Pulseras, Collares, Anillos, Personalizados)
+- Footer: Same collection links + support pages
+- Featured Products: Individual product showcase with hover effects
+- Collections Overview: Grid of collection thumbnails (to be added)
+
+**Note:** All current HTML will eventually be converted to Liquid code for Shopify integration.
 

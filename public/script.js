@@ -53,17 +53,6 @@ if (newsletterForm) {
     });
 }
 
-// Product card hover effects
-document.querySelectorAll('.product-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.02)';
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-    });
-});
-
 // Intersection Observer for fade-in animations
 const observerOptions = {
     threshold: 0.1,
