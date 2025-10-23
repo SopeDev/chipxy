@@ -186,14 +186,25 @@ body {
 .nav.nav-light .nav-menu a,
 .nav.nav-light .nav-icon {
     color: var(--color-eerie-black);
+    position: relative;
+    text-decoration: none;
 }
 
-.nav.nav-light .nav-menu a:hover,
-.nav.nav-light .nav-icon:hover {
-    color: var(--color-eerie-black);
-    background-color: var(--color-mindaro);
-    padding: 8px 16px;
-    border-radius: 0;
+.nav.nav-light .nav-menu a::after,
+.nav.nav-light .nav-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-eerie-black);
+    transition: width 0.3s ease;
+}
+
+.nav.nav-light .nav-menu a:hover::after,
+.nav.nav-light .nav-icon:hover::after {
+    width: 100%;
 }
 
 /* Dropdown Navigation Styles */
