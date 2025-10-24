@@ -939,26 +939,12 @@ body {
    ======================================== */
 
 /* Tablet and smaller (768px and below) */
-@media (max-width: 768px) {
-    /* Carousel adjustments */
-    .carousel-thumbnails {
-        right: 10px;
-    }
-
-    .carousel-thumbnail-item {
-        width: 50px;
-    }
-    
+@media (max-width: 768px) {    
     /* Navigation */
     .nav-menu {
         display: none;
     }
-    
-    /* Editorial quote */
-    .editorial-quote {
-        padding: 80px 0;
-    }
-    
+        
     .quote-text {
         font-size: 2.2rem;
         line-height: 1.4;
@@ -1017,6 +1003,42 @@ body {
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
+
+    /* Hero */
+    .carousel-slide .hero-text {
+        padding: 20px;
+        left: 0;
+        bottom: 10vh;
+        backdrop-filter: blur(10px);
+    }
+
+    .carousel-thumbnails {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .btn-primary {
+        font-size: 0.8rem;
+    }
+
+    .carousel-slide .hero-image img {
+        width: 100%;
+        height: calc(100% - 80px);
+        object-fit: cover;
+        object-position: center;
+        margin-left: 0;
+        margin-top: 80px;
+    }
+
     /* Container adjustments */
     .container {
         padding: 0 15px;

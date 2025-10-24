@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize carousel
     showSlide(0);
-    startCarousel();
+    // startCarousel(); // DISABLED for responsive testing
 
     // Thumbnail click handlers
     thumbnails.forEach((thumbnail, index) => {
