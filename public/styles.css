@@ -291,7 +291,7 @@ body {
 .hero-carousel {
     position: relative;
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
     overflow: hidden;
 }
 
@@ -1063,6 +1063,18 @@ body {
     /* Product grid */
     .product-grid {
         grid-template-columns: 1fr;
+    }
+
+    .view-all-content {
+        padding: 80px 20px;
+    }
+
+    .view-all-card {
+        background-color: rgb(236 255 176 / 60%);
+    }
+
+    .view-all-card:hover {
+        background-color: var(--color-mindaro);
     }
 }
 
