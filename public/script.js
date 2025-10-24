@@ -72,14 +72,49 @@ document.querySelectorAll('.section-title').forEach(title => {
     observer.observe(title);
 });
 
-// Very subtle parallax for about image
+// Very subtle parallax for about image and quote - RESPONSIVE APPROACH
 window.addEventListener('scroll', () => {
     const aboutImage = document.querySelector('.about-image img');
-    if (!aboutImage) return;
+    const quoteText = document.querySelector('.quote-text');
     
-    const scrolled = window.pageYOffset;
-    const parallaxOffset = scrolled * 0.1 - 450; // Very subtle - only 0.1x scroll speed
-    aboutImage.style.transform = `translateY(${parallaxOffset}px)`;
+    // About image parallax
+    if (aboutImage) {
+        const scrolled = window.pageYOffset;
+        const aboutSection = document.querySelector('.about');
+        if (aboutSection) {
+            // Calculate section position relative to viewport
+            const sectionRect = aboutSection.getBoundingClientRect();
+            const sectionTop = sectionRect.top + scrolled;
+            const sectionHeight = aboutSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            
+            // Only apply parallax when section is in viewport
+            if (sectionRect.top < viewportHeight && sectionRect.bottom > 0) {
+                // Calculate offset based on section's position in viewport
+                const sectionProgress = (viewportHeight - sectionRect.top) / (viewportHeight + sectionHeight);
+                const parallaxOffset = sectionProgress * 100 - 150; // Max 50px movement
+                aboutImage.style.transform = `translateY(${parallaxOffset}px)`;
+            }
+        }
+    }
+    
+    // Quote text parallax
+    if (quoteText) {
+        const scrolled = window.pageYOffset;
+        const quoteSection = document.querySelector('.editorial-quote');
+        if (quoteSection) {
+            const sectionRect = quoteSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Only apply parallax when section is in viewport
+            if (sectionRect.top < viewportHeight && sectionRect.bottom > 0) {
+                // Calculate offset based on section's position in viewport
+                const sectionProgress = (viewportHeight - sectionRect.top) / (viewportHeight + quoteSection.offsetHeight);
+                const parallaxOffset = sectionProgress * -30; // Max -30px movement (opposite direction)
+                quoteText.style.transform = `translateY(${parallaxOffset}px)`;
+            }
+        }
+    }
 });
 
 // Mobile menu toggle (if needed in future)

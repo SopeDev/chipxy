@@ -642,6 +642,8 @@ body {
     letter-spacing: -0.01em;
     margin: 0 0 40px 0;
     padding: 0 20px;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
 .quote-attribution {
