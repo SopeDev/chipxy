@@ -397,7 +397,6 @@ body {
 }
 
 .carousel-slide .hero-text {
-    max-width: 500px;
     background-color: rgba(252, 255, 243, 0.6);
     padding: 50px;
     backdrop-filter: blur(15px);
@@ -638,7 +637,6 @@ body {
 }
 
 .hero-text {
-    max-width: 500px;
     background-color: rgba(252, 255, 243, 0.9);
     padding: 50px;
     backdrop-filter: blur(15px);
@@ -650,14 +648,12 @@ body {
 }
 
 .hero-title {
-    font-family: var(--font-primary);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 400;
-    line-height: 1.1;
+    font-family: var(--font-secondary);
+    font-size: clamp(3rem, 8vw, 4rem);
+    font-weight: 300;
     color: var(--color-eerie-black);
     margin-bottom: 20px;
-    text-transform: lowercase;
-    letter-spacing: -0.02em;
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
@@ -721,7 +717,6 @@ body {
 
 .about {
     padding: var(--section-spacing) 0;
-    background-color: var(--color-ivory);
 }
 
 
@@ -732,22 +727,20 @@ body {
 }
 
 .section-title {
-    font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 400;
+    font-family: var(--font-accent);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
     color: var(--color-eerie-black);
     margin-bottom: 15px;
-    text-transform: lowercase;
-    letter-spacing: -0.01em;
 }
 
 .section-subtitle {
-    font-family: var(--font-accent);
-    font-size: 1.1rem;
-    font-style: italic;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-eerie-black);
     opacity: 0.8;
+    text-transform: uppercase;
 }
 
 /* Product Grid */
@@ -824,12 +817,11 @@ body {
 }
 
 .view-all-title {
-    font-family: var(--font-primary);
-    font-size: 1.4rem;
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--color-eerie-black);
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
@@ -885,7 +877,7 @@ body {
 }
 
 .quote-text {
-    font-family: var(--font-primary);
+    font-family: var(--font-accent);
     font-size: 2.8rem;
     font-weight: 400;
     font-style: italic;
@@ -980,12 +972,12 @@ body {
 }
 
 .collection-title {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--color-eerie-black);
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     z-index: 2;
 }
 
@@ -1234,7 +1226,7 @@ body {
     margin: 0 auto;
     padding: 60px 20px;
     display: grid;
-    grid-template-columns: auto 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 100px;
     align-items: start;
     position: relative;
@@ -1249,7 +1241,6 @@ body {
 }
 
 .footer-logo {
-    height: 40vh;
     width: auto;
     opacity: 0.1;
     transition: opacity 0.3s ease;
@@ -1262,13 +1253,13 @@ body {
 }
 
 .footer-newsletter .newsletter-title {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 300;
     color: var(--color-eerie-black);
     margin-bottom: 20px;
-    text-transform: lowercase;
-    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     line-height: 1.2;
 }
 
@@ -1327,9 +1318,9 @@ body {
 }
 
 .footer-column h4 {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--color-eerie-black);
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -1358,6 +1349,21 @@ body {
 .footer-column ul li a:hover {
     opacity: 1;
     color: var(--color-eerie-black);
+}
+
+.footer-copyright {
+    text-align: right;
+    max-width: var(--content-width);
+    margin: 0 auto;
+}
+
+.footer-copyright p {
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    color: var(--color-eerie-black);
+    opacity: 0.6;
+    margin: 0;
+    letter-spacing: 0.02em;
 }
 
 /* Large Logo Background */
