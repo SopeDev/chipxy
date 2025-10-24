@@ -1065,6 +1065,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .featured-collections {
+        padding: 5px;
+    }
+
     .view-all-content {
         padding: 80px 20px;
     }
