@@ -977,7 +977,7 @@ body {
     
     /* Footer */
     .footer {
-        height: 60vh;
+        height: auto;
     }
     
     .footer-container {
@@ -1042,13 +1042,13 @@ body {
 
     /* Container adjustments */
     .container {
-        padding: 0 15px;
+        padding: 0 20px;
     }
     
     .nav-container {
-        padding: 0 15px;
+        padding: 0 20px;
     }
-    
+
     /* Quote text */
     .quote-text {
         font-size: 1.8rem;
@@ -1075,6 +1075,35 @@ body {
 
     .view-all-card:hover {
         background-color: var(--color-mindaro);
+    }
+    
+    /* Footer - 1 column, 4 rows */
+    .footer-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 80px;
+        padding: 80px 20px;
+    }
+    
+    .footer-logo-column {
+        order: 3;
+    }
+    
+    .footer-newsletter {
+        order: 1;
+    }
+    
+    .footer-links {
+        order: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-copyright {
+        order: 4;
+        text-align: center;
+        grid-column: 1;
+        grid-row: 4;
     }
 }
 
