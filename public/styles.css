@@ -1007,7 +1007,7 @@ body {
     /* Hero */
     .carousel-slide .hero-text {
         padding: 20px;
-        left: 0;
+        left: 1vw;
         bottom: 10vh;
         backdrop-filter: blur(10px);
     }
