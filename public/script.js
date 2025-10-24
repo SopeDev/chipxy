@@ -72,47 +72,56 @@ document.querySelectorAll('.section-title').forEach(title => {
     observer.observe(title);
 });
 
-// Very subtle parallax for about image and quote - RESPONSIVE APPROACH
+// Smart parallax - viewport-relative positioning for both elements
 window.addEventListener('scroll', () => {
     const aboutImage = document.querySelector('.about-image img');
     const quoteText = document.querySelector('.quote-text');
     
-    // About image parallax
+    // About image parallax - CENTERED APPROACH
     if (aboutImage) {
-        const scrolled = window.pageYOffset;
         const aboutSection = document.querySelector('.about');
         if (aboutSection) {
-            // Calculate section position relative to viewport
-            const sectionRect = aboutSection.getBoundingClientRect();
-            const sectionTop = sectionRect.top + scrolled;
-            const sectionHeight = aboutSection.offsetHeight;
+            const scrolled = window.pageYOffset;
             const viewportHeight = window.innerHeight;
+            const viewportCenter = viewportHeight / 2;
             
-            // Only apply parallax when section is in viewport
-            if (sectionRect.top < viewportHeight && sectionRect.bottom > 0) {
-                // Calculate offset based on section's position in viewport
-                const sectionProgress = (viewportHeight - sectionRect.top) / (viewportHeight + sectionHeight);
-                const parallaxOffset = sectionProgress * 100 - 150; // Max 50px movement
-                aboutImage.style.transform = `translateY(${parallaxOffset}px)`;
-            }
+            // Get about section's position relative to viewport
+            const sectionRect = aboutSection.getBoundingClientRect();
+            const sectionCenter = sectionRect.top + (sectionRect.height / 2);
+            
+            // Calculate distance from viewport center
+            const distanceFromCenter = sectionCenter - viewportCenter;
+            
+            // Apply parallax: when about section is centered, translateY = 0
+            // When above center: positive translateY
+            // When below center: negative translateY
+            const parallaxOffset = distanceFromCenter * -0.1 - 100; // Inverted parallax effect
+            
+            aboutImage.style.transform = `translateY(${parallaxOffset}px)`;
         }
     }
     
-    // Quote text parallax
+    // Quote text parallax - CENTERED APPROACH
     if (quoteText) {
-        const scrolled = window.pageYOffset;
         const quoteSection = document.querySelector('.editorial-quote');
         if (quoteSection) {
-            const sectionRect = quoteSection.getBoundingClientRect();
+            const scrolled = window.pageYOffset;
             const viewportHeight = window.innerHeight;
+            const viewportCenter = viewportHeight / 2;
             
-            // Only apply parallax when section is in viewport
-            if (sectionRect.top < viewportHeight && sectionRect.bottom > 0) {
-                // Calculate offset based on section's position in viewport
-                const sectionProgress = (viewportHeight - sectionRect.top) / (viewportHeight + quoteSection.offsetHeight);
-                const parallaxOffset = sectionProgress * -30; // Max -30px movement (opposite direction)
-                quoteText.style.transform = `translateY(${parallaxOffset}px)`;
-            }
+            // Get quote section's position relative to viewport
+            const sectionRect = quoteSection.getBoundingClientRect();
+            const sectionCenter = sectionRect.top + (sectionRect.height / 2);
+            
+            // Calculate distance from viewport center
+            const distanceFromCenter = sectionCenter - viewportCenter;
+            
+            // Apply parallax: when quote is centered, translateY = 0
+            // When above center: negative translateY
+            // When below center: positive translateY
+            const parallaxOffset = distanceFromCenter * -0.05; // Subtle parallax effect
+            
+            quoteText.style.transform = `translateY(${parallaxOffset}px)`;
         }
     }
 });
