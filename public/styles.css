@@ -287,11 +287,11 @@ body {
     overflow: hidden;
 }
 
-
 /* Hero Carousel */
 .hero-carousel {
     position: relative;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -1032,8 +1032,7 @@ body {
 
     .carousel-slide .hero-image img {
         width: 100%;
-        height: calc(100vh - 80px);
-        height: calc(100dvh - 80px);
+        height: calc(100% - 80px);
         object-fit: cover;
         object-position: center;
         margin-left: 0;
