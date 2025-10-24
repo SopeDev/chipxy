@@ -62,18 +62,24 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate-in');
         }
     });
 }, observerOptions);
 
-// Observe sections for fade-in effect
-document.querySelectorAll('section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
+// Observe section titles for fade-in slide-up effect
+document.querySelectorAll('.section-title').forEach(title => {
+    observer.observe(title);
+});
+
+// Very subtle parallax for about image
+window.addEventListener('scroll', () => {
+    const aboutImage = document.querySelector('.about-image img');
+    if (!aboutImage) return;
+    
+    const scrolled = window.pageYOffset;
+    const parallaxOffset = scrolled * 0.1 - 450; // Very subtle - only 0.1x scroll speed
+    aboutImage.style.transform = `translateY(${parallaxOffset}px)`;
 });
 
 // Mobile menu toggle (if needed in future)
