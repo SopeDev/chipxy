@@ -371,25 +371,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 2. QUOTE SECTION
+    // 2. QUOTE SECTION - Wait for fonts to load before initializing SplitText
     const quoteText = document.querySelector('.quote-text');
     if (quoteText) {
-        const quoteSplit = new SplitText(quoteText, {
-            type: 'lines'
-        });
+        // Wait for fonts to load before initializing SplitText
+        document.fonts.ready.then(() => {
+            const quoteSplit = new SplitText(quoteText, {
+                type: 'lines'
+            });
 
-        gsap.from(quoteSplit.lines, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            stagger: 0.2,
-            ease: "expo.out",
-            scrollTrigger: {
-                trigger: '.quote-text',
-                start: 'top 85%',
-                end: 'bottom 30%',
-                scrub: true
-            }
+            gsap.from(quoteSplit.lines, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                stagger: 0.2,
+                ease: "expo.out",
+                scrollTrigger: {
+                    trigger: '.quote-text',
+                    start: 'top 85%',
+                    end: 'bottom 30%',
+                    scrub: true
+                }
+            });
+            
+            // Refresh ScrollTrigger after SplitText initializes to ensure correct positioning
+            ScrollTrigger.refresh();
         });
     }
     

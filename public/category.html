@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipxy — Collares</title>
+    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="c-logo.svg" type="image/svg+xml">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="nav.js" defer></script>
+    <script src="footer.js" defer></script>
+</head>
+<body class="category-page">
+    <!-- Navigation injected via nav.js -->
+
+    <main>
+        <section class="category-breadcrumb">
+            <div class="category-container">
+                <a href="index.html" class="breadcrumb-link">inicio</a>
+                <span aria-hidden="true">/</span>
+                <span class="breadcrumb-current">collares</span>
+            </div>
+        </section>
+
+        <section class="category-hero">
+            <div class="category-container">
+                <div class="category-header">
+                    <p class="category-label">colección</p>
+                    <h1 class="category-title">collares</h1>
+                    <p class="category-description">
+                        Desde cadenas delicadas hasta piezas statement. Collares diseñados para ser tu firma personal, día tras día.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-filters">
+            <div class="category-container">
+                <div class="filter-chips">
+                    <button class="filter-chip" data-filter="all">todos</button>
+                    <button class="filter-chip" data-filter="price-low">bajo $200</button>
+                    <button class="filter-chip" data-filter="price-mid">$200 - $300</button>
+                    <button class="filter-chip" data-filter="price-high">más de $300</button>
+                    <button class="filter-chip" data-filter="material-oro">oro</button>
+                    <button class="filter-chip" data-filter="material-plata">plata</button>
+                    <button class="filter-chip" data-filter="length-40">40 cm</button>
+                    <button class="filter-chip" data-filter="length-45">45 cm</button>
+                    <button class="filter-chip" data-filter="length-50">50 cm</button>
+                </div>
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label for="sort-select" class="filter-label">ordenar por</label>
+                        <select id="sort-select" class="filter-select">
+                            <option value="featured">destacados</option>
+                            <option value="price-low">precio: menor a mayor</option>
+                            <option value="price-high">precio: mayor a menor</option>
+                            <option value="newest">más recientes</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <span class="filter-label">mostrando</span>
+                        <span class="filter-count">22 de 22 piezas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-products">
+            <div class="category-container">
+                <div class="product-grid">
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0008_1920.webp" alt="Collar delicado" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08997_1920.webp" alt="Collar delicado en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">cadena delicada</h4>
+                            <p class="product-price">$285</p>
+                        </div>
+                    </a>
+                    
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0375_1920.webp" alt="Collar aurum" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="Collar aurum en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar aurum</h4>
+                            <p class="product-price">$285</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0377_1920.webp" alt="Collar lumi" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="Collar lumi en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar lumi</h4>
+                            <p class="product-price">$320</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0011_1920.webp" alt="Collar essencia" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08941_1920.webp" alt="Collar essencia en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar essencia</h4>
+                            <p class="product-price">$245</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0016_1920.webp" alt="Collar minimal" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08916_1920.webp" alt="Collar minimal en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar minimal</h4>
+                            <p class="product-price">$195</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0083_1920.webp" alt="Collar atemporal" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC09030_1920.webp" alt="Collar atemporal en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar atemporal</h4>
+                            <p class="product-price">$350</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0091_1920.webp" alt="Collar sereno" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08901_1920.webp" alt="Collar sereno en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar sereno</h4>
+                            <p class="product-price">$275</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0283_1920.webp" alt="Collar elegancia" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08864_1920.webp" alt="Collar elegancia en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar elegancia</h4>
+                            <p class="product-price">$310</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0289_1920.webp" alt="Collar refinado" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08878_1920.webp" alt="Collar refinado en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar refinado</h4>
+                            <p class="product-price">$265</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0379_1920.webp" alt="Collar luminoso" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08936_1920.webp" alt="Collar luminoso en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar luminoso</h4>
+                            <p class="product-price">$290</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0383_1920.webp" alt="Collar suave" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC09011_1920.webp" alt="Collar suave en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar suave</h4>
+                            <p class="product-price">$220</p>
+                        </div>
+                    </a>
+
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0008_1920.webp" alt="Collar clásico" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08967_1920.webp" alt="Collar clásico en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">collar clásico</h4>
+                            <p class="product-price">$255</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Quote Section -->
+        <section class="category-quote editorial-quote">
+            <div class="container">
+                <div class="quote-content">
+                    <blockquote class="quote-text">
+                        Cada collar esta disenado para ser un companero de tus memorias, 
+                        creado para durar toda la vida, el tipo de pieza en la que invertiras 
+                        y pasaras a las siguientes generaciones.
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="collections category-related">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title featured-title">explora otras colecciones</h3>
+                    <p class="section-subtitle">descubre más piezas</p>
+                </div>
+            </div>
+            <!-- Full-width collections grid (matches homepage pattern) -->
+            <!-- To revert: wrap collections-grid in the container div above -->
+            <div class="collections-grid">
+                    <a href="category.html" class="collection-card">
+                        <div class="collection-image">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08916_1920.webp" alt="Aretes Collection">
+                        </div>
+                        <div class="collection-title-content">
+                            <h3 class="collection-title">aretes</h3>
+                            <span class="collection-count">5 piezas</span>
+                        </div>
+                    </a>
+                    <a href="category.html" class="collection-card">
+                        <div class="collection-image">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08777_1920.webp" alt="Pulseras Collection">
+                        </div>
+                        <div class="collection-title-content">
+                            <h3 class="collection-title">pulseras</h3>
+                            <span class="collection-count">8 piezas</span>
+                        </div>
+                    </a>
+                    <a href="category.html" class="collection-card">
+                        <div class="collection-image">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08878_1920.webp" alt="Anillos Collection">
+                        </div>
+                        <div class="collection-title-content">
+                            <h3 class="collection-title">anillos</h3>
+                            <span class="collection-count">12 piezas</span>
+                        </div>
+                    </a>
+                    <a href="category.html" class="collection-card">
+                        <div class="collection-image">
+                            <img src="photos/resized/webp_output/lifestyle/DSC09057_1920-cropped.webp" alt="Personalizados Collection">
+                        </div>
+                        <div class="collection-title-content">
+                            <h3 class="collection-title">personalizados</h3>
+                            <span class="collection-count">piezas únicas</span>
+                        </div>
+                    </a>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer injected via footer.js -->
+
+    <script src="category.js"></script>
+</body>
+</html>
+

@@ -365,6 +365,8 @@ a {
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
 .view-all-card:hover {
@@ -401,6 +403,7 @@ a {
     text-decoration: none;
     display: inline-block;
     transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
 .view-all-card:hover .view-all-link {
@@ -467,7 +470,8 @@ a {
 
 .featured-collections {
     padding: 0;
-    background-color: var(--color-baby-powder);
+    background-color: var(--color-seashell);
+    ;
 }
 
 .collections-grid {
@@ -483,6 +487,9 @@ a {
     aspect-ratio: 1/1;
     overflow: hidden;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .collection-image {
