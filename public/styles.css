@@ -180,7 +180,7 @@ a {
     backdrop-filter: blur(15px);
     border-radius: 0;
     position: absolute;
-    bottom: 15vh;
+    bottom: 20vh;
     left: 3vw;
     z-index: 10;
     min-width: 37vw;
