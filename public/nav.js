@@ -1,3 +1,117 @@
+const SEARCH_MODAL_TEMPLATE = `
+<div class="search-modal" id="search-modal" aria-hidden="true">
+    <div class="search-modal-backdrop"></div>
+    <div class="search-modal-content">
+        <div class="search-modal-header">
+            <h2 class="search-modal-title">buscar</h2>
+            <button class="search-modal-close" aria-label="Cerrar búsqueda">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="search-modal-body">
+            <form class="search-form" role="search">
+                <input 
+                    type="search" 
+                    class="search-input" 
+                    placeholder="buscar productos, colecciones..." 
+                    autocomplete="off"
+                    aria-label="Campo de búsqueda"
+                >
+                <button type="submit" class="search-submit" aria-label="Buscar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </form>
+            <div class="search-suggestions">
+                <p class="search-suggestions-label">sugerencias</p>
+                <div class="search-suggestions-list">
+                    <a href="category.html" class="search-suggestion">collares</a>
+                    <a href="category.html" class="search-suggestion">aretes</a>
+                    <a href="category.html" class="search-suggestion">pulseras</a>
+                    <a href="category.html" class="search-suggestion">anillos</a>
+                    <a href="category.html" class="search-suggestion">oro</a>
+                    <a href="category.html" class="search-suggestion">plata</a>
+                </div>
+            </div>
+            <div class="search-results" id="search-results" style="display: none;">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
+const CART_DRAWER_TEMPLATE = `
+<div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-backdrop"></div>
+    <div class="cart-drawer-content">
+        <div class="cart-drawer-header">
+            <h2 class="cart-drawer-title">carrito</h2>
+            <button class="cart-drawer-close" aria-label="Cerrar carrito">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-drawer-body">
+            <div class="cart-empty" id="cart-empty" style="display: none;">
+                <p class="cart-empty-message">tu carrito está vacío</p>
+                <a href="category.html" class="btn-primary cart-empty-cta">explorar colección</a>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <div class="cart-item" data-price="285">
+                    <img src="photos/resized/webp_output/product/_DSC0375_1920.webp" alt="Collar aurum" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h4 class="cart-item-name">collar aurum</h4>
+                        <p class="cart-item-variant">45 cm · acabado oro</p>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn quantity-minus" aria-label="Disminuir cantidad">−</button>
+                            <span class="quantity-value">1</span>
+                            <button class="quantity-btn quantity-plus" aria-label="Aumentar cantidad">+</button>
+                        </div>
+                        <p class="cart-item-price">$285</p>
+                    </div>
+                    <button class="cart-item-remove" aria-label="Eliminar producto">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="cart-drawer-footer" id="cart-footer">
+            <div class="cart-shipping-progress">
+                <div class="shipping-progress-bar">
+                    <div class="shipping-progress-fill" id="shipping-progress-fill"></div>
+                </div>
+                <p class="shipping-progress-text" id="shipping-progress-text">
+                    te faltan $714 para envío gratis
+                </p>
+            </div>
+            <div class="cart-totals">
+                <div class="cart-total-row">
+                    <span class="cart-total-label">subtotal</span>
+                    <span class="cart-total-value" id="cart-subtotal">$285</span>
+                </div>
+                <div class="cart-total-row cart-total-final">
+                    <span class="cart-total-label">total</span>
+                    <span class="cart-total-value" id="cart-total">$285</span>
+                </div>
+            </div>
+            <a href="#" class="btn-primary cart-checkout">proceder al pago</a>
+            <p class="cart-shipping-note">envío nacional sin costo a partir de $999</p>
+        </div>
+    </div>
+</div>
+`;
+
 const NAV_TEMPLATE = `
 <nav class="nav nav-light">
     <div class="nav-container">
@@ -138,6 +252,22 @@ function ensureNav() {
         nav = document.querySelector('.nav');
     }
     return nav;
+}
+
+function ensureModals() {
+    let searchModal = document.getElementById('search-modal');
+    if (!searchModal) {
+        document.body.insertAdjacentHTML('beforeend', SEARCH_MODAL_TEMPLATE);
+        searchModal = document.getElementById('search-modal');
+    }
+    
+    let cartDrawer = document.getElementById('cart-drawer');
+    if (!cartDrawer) {
+        document.body.insertAdjacentHTML('beforeend', CART_DRAWER_TEMPLATE);
+        cartDrawer = document.getElementById('cart-drawer');
+    }
+    
+    return { searchModal, cartDrawer };
 }
 
 function ensureMegaBackdrop() {
@@ -402,6 +532,203 @@ function setupMegaMenu(dropdown, backdrop) {
     }
 }
 
+function setupSearchModal(searchModal) {
+    if (!searchModal) return;
+    
+    const searchTriggers = document.querySelectorAll('.nav-icon[title="Buscar"], .mobile-nav-icon[title="Buscar"]');
+    const searchClose = searchModal.querySelector('.search-modal-close');
+    const searchBackdrop = searchModal.querySelector('.search-modal-backdrop');
+    const searchInput = searchModal.querySelector('.search-input');
+    const searchForm = searchModal.querySelector('.search-form');
+    
+    const openSearch = () => {
+        searchModal.classList.add('is-open');
+        searchModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+            searchInput?.focus();
+        }, 100);
+    };
+    
+    const closeSearch = () => {
+        searchModal.classList.remove('is-open');
+        searchModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        searchInput.value = '';
+    };
+    
+    searchTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSearch();
+        });
+    });
+    
+    searchClose?.addEventListener('click', closeSearch);
+    searchBackdrop?.addEventListener('click', closeSearch);
+    
+    searchForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        if (query) {
+            // In real implementation, this would trigger search
+            console.log('Search query:', query);
+            // For now, just close and navigate to category page
+            closeSearch();
+            window.location.href = `category.html?search=${encodeURIComponent(query)}`;
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal.classList.contains('is-open')) {
+            closeSearch();
+        }
+    });
+}
+
+function setupCartDrawer(cartDrawer) {
+    if (!cartDrawer) return;
+    
+    const FREE_SHIPPING_THRESHOLD = 999;
+    const cartTriggers = document.querySelectorAll('.nav-icon[title="Carrito"], .mobile-nav-icon[title="Carrito"]');
+    const cartClose = cartDrawer.querySelector('.cart-drawer-close');
+    const cartBackdrop = cartDrawer.querySelector('.cart-drawer-backdrop');
+    const cartEmpty = cartDrawer.querySelector('#cart-empty');
+    const cartItems = cartDrawer.querySelector('#cart-items');
+    const cartFooter = cartDrawer.querySelector('#cart-footer');
+    const cartSubtotal = cartDrawer.querySelector('#cart-subtotal');
+    const cartTotal = cartDrawer.querySelector('#cart-total');
+    const shippingProgressFill = cartDrawer.querySelector('#shipping-progress-fill');
+    const shippingProgressText = cartDrawer.querySelector('#shipping-progress-text');
+    
+    const calculateCartTotal = () => {
+        let total = 0;
+        const items = cartItems.querySelectorAll('.cart-item');
+        items.forEach(item => {
+            const price = parseFloat(item.dataset.price) || 0;
+            const quantity = parseInt(item.querySelector('.quantity-value').textContent) || 1;
+            total += price * quantity;
+        });
+        return total;
+    };
+    
+    const updateCartTotals = () => {
+        const total = calculateCartTotal();
+        const formattedTotal = `$${total.toLocaleString('es-MX')}`;
+        
+        if (cartSubtotal) cartSubtotal.textContent = formattedTotal;
+        if (cartTotal) cartTotal.textContent = formattedTotal;
+        
+        // Update shipping progress
+        const progress = Math.min((total / FREE_SHIPPING_THRESHOLD) * 100, 100);
+        const remaining = Math.max(FREE_SHIPPING_THRESHOLD - total, 0);
+        
+        if (shippingProgressFill) {
+            shippingProgressFill.style.width = `${progress}%`;
+        }
+        
+        if (shippingProgressText) {
+            if (remaining === 0) {
+                shippingProgressText.textContent = '¡tienes envío gratis!';
+            } else {
+                shippingProgressText.textContent = `te faltan $${remaining.toLocaleString('es-MX')} para envío gratis`;
+            }
+        }
+    };
+    
+    const updateItemPrice = (item) => {
+        const price = parseFloat(item.dataset.price) || 0;
+        const quantity = parseInt(item.querySelector('.quantity-value').textContent) || 1;
+        const itemPrice = item.querySelector('.cart-item-price');
+        if (itemPrice) {
+            itemPrice.textContent = `$${(price * quantity).toLocaleString('es-MX')}`;
+        }
+    };
+    
+    const updateCartDisplay = () => {
+        const hasItems = cartItems && cartItems.children.length > 0;
+        if (cartEmpty) cartEmpty.style.display = hasItems ? 'none' : 'block';
+        if (cartItems) cartItems.style.display = hasItems ? 'flex' : 'none';
+        if (cartFooter) cartFooter.style.display = hasItems ? 'block' : 'none';
+        if (hasItems) {
+            updateCartTotals();
+        }
+    };
+    
+    // Quantity buttons
+    cartDrawer.querySelectorAll('.quantity-plus').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.cart-item');
+            const quantityValue = item.querySelector('.quantity-value');
+            const currentQty = parseInt(quantityValue.textContent) || 1;
+            quantityValue.textContent = currentQty + 1;
+            updateItemPrice(item);
+            updateCartTotals();
+        });
+    });
+    
+    cartDrawer.querySelectorAll('.quantity-minus').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.cart-item');
+            const quantityValue = item.querySelector('.quantity-value');
+            const currentQty = parseInt(quantityValue.textContent) || 1;
+            if (currentQty > 1) {
+                quantityValue.textContent = currentQty - 1;
+                updateItemPrice(item);
+                updateCartTotals();
+            }
+        });
+    });
+    
+    // Remove buttons
+    const handleRemoveButtons = () => {
+        cartDrawer.querySelectorAll('.cart-item-remove').forEach(button => {
+            if (button.dataset.bound) return;
+            button.dataset.bound = 'true';
+            button.addEventListener('click', () => {
+                const cartItem = button.closest('.cart-item');
+                if (cartItem) {
+                    cartItem.remove();
+                    updateCartDisplay();
+                }
+            });
+        });
+    };
+    
+    handleRemoveButtons();
+    
+    // Initialize display state
+    updateCartDisplay();
+    
+    const openCart = () => {
+        cartDrawer.classList.add('is-open');
+        cartDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+    
+    const closeCart = () => {
+        cartDrawer.classList.remove('is-open');
+        cartDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+    
+    cartTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            openCart();
+        });
+    });
+    
+    cartClose?.addEventListener('click', closeCart);
+    cartBackdrop?.addEventListener('click', closeCart);
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cartDrawer.classList.contains('is-open')) {
+            closeCart();
+        }
+    });
+}
+
 function setupAnchorScroll() {
     if (window.__chipxyAnchorScrollBound) return;
     window.__chipxyAnchorScrollBound = true;
@@ -436,9 +763,13 @@ function initNavigation() {
     if (!nav) return;
 
     const megaBackdrop = ensureMegaBackdrop();
+    const { searchModal, cartDrawer } = ensureModals();
+    
     setupScrollState(nav);
     setupMobileMenu(nav);
     setupMegaMenu(nav.querySelector('[data-dropdown]'), megaBackdrop);
+    setupSearchModal(searchModal);
+    setupCartDrawer(cartDrawer);
     setupAnchorScroll();
 
     document.dispatchEvent(new CustomEvent('chipxy:nav-ready', { detail: { nav } }));
