@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipxy — Collar Aurum</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="nav.js" defer></script>
+    <script src="footer.js" defer></script>
+</head>
+<body class="product-page">
+    <!-- Navigation injected via nav.js -->
+
+    <main>
+        <section class="product-breadcrumb">
+            <div class="product-container">
+                <a href="#" class="breadcrumb-link">inicio</a>
+                <span aria-hidden="true">/</span>
+                <a href="#" class="breadcrumb-link">collares</a>
+                <span aria-hidden="true">/</span>
+                <span class="breadcrumb-current">collar aurum</span>
+            </div>
+        </section>
+
+        <section class="product-hero" id="producto">
+            <div class="product-container">
+                <div class="product-gallery" aria-label="Galería de imágenes">
+                    <figure class="gallery-main">
+                        <img src="photos/resized/webp_output/product/_DSC0375_1920.webp" alt="Primer plano del collar aurum" class="gallery-main-image">
+                    </figure>
+                    <div class="gallery-thumbnails" role="list">
+                        <button class="gallery-thumb is-selected" data-image="photos/resized/webp_output/product/_DSC0375_1920.webp" aria-label="Vista frontal del collar">
+                            <img src="photos/resized/webp_output/product/_DSC0375_1920.webp" alt="">
+                        </button>
+                        <button class="gallery-thumb" data-image="photos/resized/webp_output/product/_DSC0377_1920.webp" aria-label="Detalle del collar">
+                            <img src="photos/resized/webp_output/product/_DSC0377_1920.webp" alt="">
+                        </button>
+                        <button class="gallery-thumb" data-image="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" aria-label="Collar aurum en modelo">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="">
+                        </button>
+                        <button class="gallery-thumb" data-image="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" aria-label="Collar aurum en estilismo editorial">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="product-summary">
+                    <p class="product-label">colección esenciales</p>
+                    <h1 class="product-title">collar aurum</h1>
+                    <p class="product-subtitle">lucecitas de acero inoxidable con chapa de oro 18k, diseñadas para acompañar cada día.</p>
+                    <div class="product-price-block">
+                        <span class="product-price">$285</span>
+                        <span class="product-payment-note">3 meses sin intereses — $95 al mes</span>
+                    </div>
+                    <form class="product-form">
+                        <fieldset class="product-options" aria-labelledby="size-label">
+                            <legend id="size-label">largo</legend>
+                            <div class="option-chips" role="radiogroup" aria-label="Selecciona el largo">
+                                <button type="button" class="option-chip is-active" data-option="40cm" aria-pressed="true">40 cm</button>
+                                <button type="button" class="option-chip" data-option="45cm" aria-pressed="false">45 cm</button>
+                                <button type="button" class="option-chip" data-option="50cm" aria-pressed="false">50 cm</button>
+                            </div>
+                        </fieldset>
+                        <fieldset class="product-options" aria-labelledby="finish-label">
+                            <legend id="finish-label">acabado</legend>
+                            <div class="option-swatches" role="radiogroup" aria-label="Selecciona el acabado">
+                                <button type="button" class="swatch is-active" data-option="oro" aria-pressed="true">
+                                    <span class="swatch-color" style="background: linear-gradient(135deg, #E2C166, #D9B24C);"></span>
+                                    <span class="swatch-label">oro</span>
+                                </button>
+                                <button type="button" class="swatch" data-option="plata" aria-pressed="false">
+                                    <span class="swatch-color" style="background: linear-gradient(135deg, #F2F2F2, #BFBFBF);"></span>
+                                    <span class="swatch-label">plata</span>
+                                </button>
+                            </div>
+                        </fieldset>
+                        <div class="product-quantity" aria-label="Selecciona la cantidad">
+                            <label for="product-quantity-input">cantidad</label>
+                            <div class="quantity-control" role="group">
+                                <button type="button" class="quantity-btn" aria-label="Disminuir cantidad" data-action="decrement">−</button>
+                                <input id="product-quantity-input" class="quantity-input" type="number" name="quantity" min="1" value="1" inputmode="numeric" pattern="[0-9]*">
+                                <button type="button" class="quantity-btn" aria-label="Aumentar cantidad" data-action="increment">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <button type="submit" class="btn-primary add-to-cart">agregar al carrito</button>
+                            <button type="button" class="btn-secondary add-to-wishlist" aria-pressed="false">
+                                <span aria-hidden="true">♡</span>
+                                <span class="sr-only">Agregar a favoritos</span>
+                            </button>
+                        </div>
+                    </form>
+                    <ul class="product-service-list">
+                        <li><span>envío nacional sin costo a partir de $999</span></li>
+                        <li><span>garantía chipxy por 12 meses</span></li>
+                        <li><span>una compra = una donación a refugios</span></li>
+                    </ul>
+                    <div class="product-meta">
+                        <div class="meta-panel is-open" id="detalle-material">
+                            <h3 class="meta-title">detalle de materiales</h3>
+                            <p>
+                                Acero inoxidable hipoalergénico con baño de oro de 18 quilates.
+                                Resistente al agua, libre de níquel y pensado para uso cotidiano.
+                            </p>
+                        </div>
+                        <div class="meta-panel is-open" id="cuidado">
+                            <h3 class="meta-title">cuidado & mantenimiento</h3>
+                            <p>
+                                Limpia suavemente con paño de microfibra. Evita perfumes directos y guarda la pieza en la bolsa protectora incluida.
+                            </p>
+                        </div>
+                        <div class="meta-panel is-open" id="envio">
+                            <h3 class="meta-title">envío & devoluciones</h3>
+                            <p>
+                                Procesamos tu pedido en 24 h. Entregas 2–5 días hábiles. Cambios fáciles dentro de los primeros 15 días.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-reviews" id="reviews">
+            <div class="product-container reviews-inner">
+                <div class="reviews-header">
+                    <h2 class="reviews-title">opiniones destacadas</h2>
+                    <p class="reviews-subtitle">lo que nuestras clientas sienten al llevar el collar aurum</p>
+                </div>
+                <div class="reviews-grid">
+                    <article class="review-card">
+                        <header class="review-header">
+                            <div class="review-rating" aria-label="5 de 5 estrellas">
+                                <span>★★★★★</span>
+                            </div>
+                            <p class="review-author">mariana g.</p>
+                        </header>
+                        <p class="review-body">
+                            “Lo recibí en tres días y desde entonces no me lo quito. La cadena tiene el brillo perfecto y no se decolora, incluso con el uso diario.”
+                        </p>
+                        <p class="review-meta">talla 45 cm · acabado oro</p>
+                    </article>
+                    <article class="review-card review-card--media">
+                        <div class="review-media">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08941_1920.webp" alt="Cliente usando el collar aurum con luz natural" loading="lazy">
+                        </div>
+                        <header class="review-header">
+                            <div class="review-rating" aria-label="5 de 5 estrellas">
+                                <span>★★★★★</span>
+                            </div>
+                            <p class="review-author">alexa m.</p>
+                        </header>
+                        <p class="review-body">
+                            “Pedí el collar para usarlo en mi sesión de fotos y robó cámara. El brillo es suave pero se nota, y la textura no irrita la piel.”
+                        </p>
+                        <p class="review-meta">talla 45 cm · acabado oro</p>
+                    </article>
+                    <article class="review-card">
+                        <header class="review-header">
+                            <div class="review-rating" aria-label="4.5 de 5 estrellas">
+                                <span>★★★★☆</span>
+                            </div>
+                            <p class="review-author">valeria l.</p>
+                        </header>
+                        <p class="review-body">
+                            “Ligero, elegante y combinable con todo. Me encanta que parte de la compra apoya a los refugios—definitivamente regresaré por la pulsera.”
+                        </p>
+                        <p class="review-meta">talla 40 cm · acabado oro</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="collections product-related">
+            <div class="container">
+                <div class="section-header">
+                    <h3 class="section-title featured-title">para completar el conjunto</h3>
+                    <p class="section-subtitle">productos recomendados</p>
+                </div>
+                <div class="product-grid">
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0011_1920.webp" alt="Aretes lumi detalle" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="Aretes lumi en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">aretes lumi</h4>
+                            <p class="product-price">$195</p>
+                        </div>
+                    </a>
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0379_1920.webp" alt="Pulsera mindaro detalle" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08901_1920.webp" alt="Pulsera mindaro en modelo" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">pulsera mindaro</h4>
+                            <p class="product-price">$165</p>
+                        </div>
+                    </a>
+                    <a class="product-card" href="product.html">
+                        <div class="product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0289_1920.webp" alt="Anillo dual detalle" class="product-img">
+                            <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="Anillo dual en contexto" class="lifestyle-img">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-name">anillo dual</h4>
+                            <p class="product-price">$145</p>
+                        </div>
+                    </a>
+                    <div class="product-card view-all-card">
+                        <div class="view-all-content">
+                            <h4 class="view-all-title">ver colección completa</h4>
+                            <p class="view-all-subtitle">descubre todas las piezas seleccionadas para ti</p>
+                            <a href="#" class="view-all-link">→</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-collections" id="collections-overview">
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08916_1920.webp" alt="Aretes Collection">
+                    </div>
+                    <div class="collection-title-content">
+                        <h3 class="collection-title">aretes</h3>
+                        <span class="collection-count">5 piezas</span>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08777_1920.webp" alt="Pulseras Collection">
+                    </div>
+                    <div class="collection-title-content">
+                        <h3 class="collection-title">pulseras</h3>
+                        <span class="collection-count">8 piezas</span>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="photos/resized/webp_output/lifestyle/DSC09030_1920.webp" alt="Collares Collection">
+                    </div>
+                    <div class="collection-title-content">
+                        <h3 class="collection-title">collares</h3>
+                        <span class="collection-count">22 piezas</span>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08878_1920.webp" alt="Anillos Collection">
+                    </div>
+                    <div class="collection-title-content">
+                        <h3 class="collection-title">anillos</h3>
+                        <span class="collection-count">12 piezas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-giving">
+            <div class="product-container giving-content">
+                <div class="giving-text">
+                    <h2 class="giving-title">mas que joyeria</h2>
+                    <p class="giving-lede">Cada compra ayuda a garantizar alimento, refugio y atención médica para perritos que esperan encontrar un hogar.</p>
+                    <p class="giving-copy">Chipxy nacio con la intencion de sumar esperanza. Trabajamos con refugios locales en Tijuana para cubrir tratamientos veterinarios y visitas semanales de voluntarios.</p>
+                    <ul class="giving-highlights">
+                        <li>donación directa del 5% por pieza vendida</li>
+                        <li>kits de cuidado y mantas entregados cada mes</li>
+                        <li>programa apadrina un cachorro en colaboración con hogares temporales</li>
+                    </ul>
+                </div>
+                <div class="giving-visual">
+                    <img src="photos/resized/webp_output/doggy.webp" alt="Perrito rescatado recibiendo cariño" class="giving-image" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer injected via footer.js -->
+
+    <script src="product.js"></script>
+</body>
+</html>
+
+

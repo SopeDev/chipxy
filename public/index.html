@@ -5,100 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chipxy - Refined Jewelry</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="nav.js" defer></script>
+    <script src="footer.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav nav-light">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">
-                    <h1>Chipxy</h1>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#collections">aretes</a></li>
-                <li><a href="#collections">pulseras</a></li>
-                <li><a href="#collections">collares</a></li>
-                <li><a href="#collections">anillos</a></li>
-                <li><a href="#collections">personalizados</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="#" class="nav-icon" title="Buscar">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="m21 21-4.35-4.35"></path>
-                    </svg>
-                </a>
-                <a href="#" class="nav-icon" title="Mi cuenta">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </a>
-                <a href="#" class="nav-icon" title="Carrito">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="m1 1 4 4 13 0 2 8-13 0"></path>
-                    </svg>
-                </a>
-            </div>
-            
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-toggle" aria-label="Abrir menú">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay">
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-header">
-                    <h2>Chipxy</h2>
-                </div>
-                <ul class="mobile-menu">
-                    <li><a href="#collections">aretes</a></li>
-                    <li><a href="#collections">pulseras</a></li>
-                    <li><a href="#collections">collares</a></li>
-                    <li><a href="#collections">anillos</a></li>
-                    <li><a href="#collections">personalizados</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-                <div class="mobile-menu-icons">
-                    <a href="#" class="mobile-nav-icon" title="Buscar">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <span>Buscar</span>
-                    </a>
-                    <a href="#" class="mobile-nav-icon" title="Mi cuenta">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        <span>Mi cuenta</span>
-                    </a>
-                    <a href="#" class="mobile-nav-icon" title="Carrito">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="m1 1 4 4 13 0 2 8-13 0"></path>
-                        </svg>
-                        <span>Carrito</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation injected via nav.js -->
 
     <!-- Hero Section - Carousel -->
     <section class="hero hero-carousel">
@@ -106,7 +22,7 @@
             <!-- Slide 1: Lifestyle Focus -->
             <div class="carousel-slide active" data-slide="1">
                 <div class="hero-image">
-                    <img src="photos/resized/webp_output/DSC08997_1920.webp" alt="Elegant jewelry lifestyle shot">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08997_1920.webp" alt="Elegant jewelry lifestyle shot">
                 </div>
                 <div class="hero-content">
                 <div class="hero-text">
@@ -120,7 +36,7 @@
             <!-- Slide 2: Product Focus -->
             <div class="carousel-slide" data-slide="2">
                 <div class="hero-image">
-                    <img src="photos/resized/webp_output/DSC08941_1920.webp" alt="Delicate gold necklace detail">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08941_1920.webp" alt="Delicate gold necklace detail">
                 </div>
                 <div class="hero-content">
                 <div class="hero-text">
@@ -134,7 +50,7 @@
             <!-- Slide 3: Lifestyle Focus -->
             <div class="carousel-slide" data-slide="3">
                 <div class="hero-image">
-                    <img src="photos/resized/webp_output/DSC08857_1920.webp" alt="Statement earrings detail">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="Statement earrings detail">
                 </div>
                 <div class="hero-content">
                 <div class="hero-text">
@@ -148,7 +64,7 @@
             <!-- Slide 4: Product Focus -->
             <div class="carousel-slide" data-slide="4">
                 <div class="hero-image">
-                    <img src="photos/resized/webp_output/DSC08821_1920.webp" alt="Jewelry craftsmanship lifestyle">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="Jewelry craftsmanship lifestyle">
                 </div>
                 <div class="hero-content">
                 <div class="hero-text">
@@ -162,15 +78,15 @@
 
         <!-- Carousel Thumbnails -->
         <div class="carousel-thumbnails">
-            <img src="photos/resized/webp_output/DSC08997_1920.webp" alt="Thumbnail 1" class="carousel-thumbnail-item active" data-slide="1">
-            <img src="photos/resized/webp_output/DSC08941_1920.webp" alt="Thumbnail 2" class="carousel-thumbnail-item" data-slide="2">
-            <img src="photos/resized/webp_output/DSC08857_1920.webp" alt="Thumbnail 3" class="carousel-thumbnail-item" data-slide="3">
-            <img src="photos/resized/webp_output/DSC08821_1920.webp" alt="Thumbnail 4" class="carousel-thumbnail-item" data-slide="4">
+            <img src="photos/resized/webp_output/lifestyle/DSC08997_1920.webp" alt="Thumbnail 1" class="carousel-thumbnail-item active" data-slide="1">
+            <img src="photos/resized/webp_output/lifestyle/DSC08941_1920.webp" alt="Thumbnail 2" class="carousel-thumbnail-item" data-slide="2">
+            <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="Thumbnail 3" class="carousel-thumbnail-item" data-slide="3">
+            <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="Thumbnail 4" class="carousel-thumbnail-item" data-slide="4">
         </div>
     </section>
 
-    <!-- Featured Collections -->
-    <section class="collections" id="collections">
+    <!-- Featured Section -->
+    <section class="collections" id="featured">
         <div class="container">
             <div class="section-header">
                 <h3 class="section-title featured-title">Piezas atemporales para la mujer moderna</h3>
@@ -178,67 +94,111 @@
             </div>
             
             <div class="product-grid">
-                <div class="product-card">
+                <a class="product-card" href="product.html">
                     <div class="product-image">
-                        <img src="photos/resized/webp_output/DSC08754_1920.webp" alt="Delicate gold necklace" class="product-img">
-                        <img src="photos/resized/webp_output/DSC08997_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
+                        <img src="photos/resized/webp_output/product/_DSC0008_1920.webp" alt="Delicate gold necklace" class="product-img">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08997_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">cadena delicada</h4>
                         <p class="product-price">$285</p>
                     </div>
-                </div>
+                </a>
                 
-                <div class="product-card">
+                <a class="product-card" href="product.html">
                     <div class="product-image">
-                        <img src="photos/resized/webp_output/DSC08761_1920.webp" alt="Statement earrings" class="product-img">
-                        <img src="photos/resized/webp_output/DSC08941_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
+                        <img src="photos/resized/webp_output/product/_DSC0016_1920.webp" alt="Statement earrings" class="product-img">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08941_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">aretes destacados</h4>
                         <p class="product-price">$195</p>
                     </div>
-                </div>
+                </a>
                 
-                <div class="product-card">
+                <a class="product-card" href="product.html">
                     <div class="product-image">
-                        <img src="photos/resized/webp_output/DSC08777_1920.webp" alt="Minimalist ring" class="product-img">
-                        <img src="photos/resized/webp_output/DSC08821_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
+                        <img src="photos/resized/webp_output/product/_DSC0283_1920.webp" alt="Minimalist ring" class="product-img">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08821_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">anillo minimalista</h4>
                         <p class="product-price">$165</p>
                     </div>
-                </div>
+                </a>
                 
-                <div class="product-card">
+                <a class="product-card" href="product.html">
                     <div class="product-image">
-                        <img src="photos/resized/webp_output/DSC08806_1920.webp" alt="Pearl necklace" class="product-img">
-                        <img src="photos/resized/webp_output/DSC08857_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
+                        <img src="photos/resized/webp_output/product/_DSC0375_1920.webp" alt="Pearl necklace" class="product-img">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08857_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">accento de perla</h4>
                         <p class="product-price">$325</p>
                     </div>
-                </div>
+                </a>
                 
-                <div class="product-card">
+                <a class="product-card" href="product.html">
                     <div class="product-image">
-                        <img src="photos/resized/webp_output/DSC08878_1920.webp" alt="Minimalist bracelet" class="product-img">
-                        <img src="photos/resized/webp_output/DSC08901_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
+                        <img src="photos/resized/webp_output/product/_DSC0383_1920.webp" alt="Minimalist bracelet" class="product-img">
+                        <img src="photos/resized/webp_output/lifestyle/DSC08901_1920.webp" alt="Lifestyle shot" class="lifestyle-img">
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">pulsera minimalista</h4>
                         <p class="product-price">$145</p>
                     </div>
-                </div>
-                
+                </a>
                 <div class="product-card view-all-card">
                     <div class="view-all-content">
                         <h4 class="view-all-title">ver todos los productos</h4>
                         <p class="view-all-subtitle">explora nuestra colección completa</p>
-                        <a href="#featured-products" class="view-all-link">→</a>
+                        <a href="#collections" class="view-all-link">→</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Overview -->
+    <section class="featured-collections" id="collections">
+        <div class="collections-grid">
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08916_1920.webp" alt="Aretes Collection">
+                </div>
+                <div class="collection-title-content">
+                    <h3 class="collection-title">aretes</h3>
+                    <span class="collection-count">5 piezas</span>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08777_1920.webp" alt="Pulseras Collection">
+                </div>
+                <div class="collection-title-content">
+                    <h3 class="collection-title">pulseras</h3>
+                    <span class="collection-count">8 piezas</span>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="photos/resized/webp_output/lifestyle/DSC09030_1920.webp" alt="Collares Collection">
+                </div>
+                <div class="collection-title-content">
+                    <h3 class="collection-title">collares</h3>
+                    <span class="collection-count">22 piezas</span>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="collection-image">
+                    <img src="photos/resized/webp_output/lifestyle/DSC08878_1920.webp" alt="Anillos Collection">
+                </div>
+                <div class="collection-title-content">
+                    <h3 class="collection-title">anillos</h3>
+                    <span class="collection-count">12 piezas</span>
                 </div>
             </div>
         </div>
@@ -246,17 +206,46 @@
 
     <!-- Personalized Section -->
     <section class="personalized-section" id="personalizados">
-        <div class="personalized-background">
-            <img src="photos/resized/webp_output/DSC09057_1920.webp" alt="Personalized jewelry creation">
-        </div>
         <div class="personalized-content">
             <div class="personalized-text">
-                <h2 class="personalized-title">joyeria personalizada</h2>
+                <h2 class="personalized-title">Piezas personalizadas</h2>
                 <p class="personalized-description">
-                    Crea piezas unicas que reflejen tu estilo personal. 
+                    Crea piezas unicas que reflejen tu estilo personal. <br>
                     Trabajamos contigo para disenar joyeria que cuente tu historia.
                 </p>
-                <a href="#contact" class="btn-primary personalized-cta">comenzar mi diseno</a>
+                <div class="personalized-product-grid">
+                    <a class="personalized-product-card" href="product.html">
+                        <div class="personalized-product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0011_1920.webp" alt="Anillo personalizado dorado">
+                        </div>
+                        <div class="personalized-product-info">
+                            <h4 class="product-name">anillo grabado</h4>
+                            <p class="product-price">desde $180</p>
+                        </div>
+                    </a>
+                    <a class="personalized-product-card" href="product.html">
+                        <div class="personalized-product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0289_1920.webp" alt="Collar con inicial">
+                        </div>
+                        <div class="personalized-product-info">
+                            <h4 class="product-name">collar con inicial</h4>
+                            <p class="product-price">desde $220</p>
+                        </div>
+                    </a>
+                    <a class="personalized-product-card" href="product.html">
+                        <div class="personalized-product-image">
+                            <img src="photos/resized/webp_output/product/_DSC0377_1920.webp" alt="Pulsera personalizada">
+                        </div>
+                        <div class="personalized-product-info">
+                            <h4 class="product-name">pulsera a medida</h4>
+                            <p class="product-price">desde $190</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="#collections" class="btn-primary personalized-cta">ver colección</a>
+            </div>
+            <div class="personalized-visual">
+                <img src="photos/resized/webp_output/lifestyle/DSC09057_1920-cropped.webp" alt="Personalized jewelry creation" class="personalized-image">
             </div>
         </div>
     </section>
@@ -275,47 +264,6 @@
         </div>
     </section>
 
-    <!-- Featured Collections -->
-    <section class="featured-collections" id="featured-collections">
-        <div class="collections-grid">
-            <div class="collection-card">
-                <div class="collection-image">
-                    <img src="photos/resized/webp_output/DSC08916_1920.webp" alt="Aretes Collection">
-                </div>
-                <div class="collection-title-content">
-                    <h3 class="collection-title">aretes</h3>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <img src="photos/resized/webp_output/DSC08777_1920.webp" alt="Pulseras Collection">
-                </div>
-                <div class="collection-title-content">
-                    <h3 class="collection-title">pulseras</h3>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <img src="photos/resized/webp_output/DSC09030_1920.webp" alt="Collares Collection">
-                </div>
-                <div class="collection-title-content">
-                    <h3 class="collection-title">collares</h3>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <img src="photos/resized/webp_output/DSC08878_1920.webp" alt="Anillos Collection">
-                </div>
-                <div class="collection-title-content">
-                    <h3 class="collection-title">anillos</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -327,66 +275,14 @@
                     </p>
                 </div>
                 <div class="about-image">
-                    <img src="photos/resized/webp_output/DSC09064_1920.webp" alt="Jewelry craftsmanship detail">
+                    <img src="photos/resized/webp_output/lifestyle/DSC09064_1920.webp" alt="Jewelry craftsmanship detail">
                 </div>
             </div>
         </div>
     </section>
 
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Logo Column -->
-            <div class="footer-logo-column">
-                <img src="c-logo.svg" alt="Chipxy Logo" class="footer-logo">
-            </div>
-            
-            <!-- Newsletter Section -->
-            <div class="footer-newsletter">
-                <h3 class="newsletter-title">únete al círculo chipxy</h3>
-                <p class="newsletter-subtitle">sé la primera en descubrir nuevas colecciones y piezas exclusivas</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="ingresa tu dirección de correo" class="newsletter-input">
-                    <button type="submit" class="newsletter-btn">→</button>
-                </form>
-            </div>
-            
-            <!-- Footer Links -->
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h4>colecciones</h4>
-                    <ul>
-                        <li><a href="#">aretes</a></li>
-                        <li><a href="#">pulseras</a></li>
-                        <li><a href="#">collares</a></li>
-                        <li><a href="#">anillos</a></li>
-                        <li><a href="#">personalizados</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>soporte</h4>
-                    <ul>
-                        <li><a href="#">contacto</a></li>
-                        <li><a href="#">envíos</a></li>
-                        <li><a href="#">devoluciones</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>conectar</h4>
-                    <ul>
-                        <li><a href="#">instagram</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="footer-copyright">
-                <p>&copy; 2025 Chipxy. todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer injected via footer.js -->
 
     <script src="script.js"></script>
 </body>

@@ -1,100 +1,25 @@
 // Chipxy Website JavaScript
 
 // Navigation scroll behavior
-document.addEventListener('DOMContentLoaded', function() {
-    const nav = document.querySelector('.nav');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
-    function openMobileMenu() {
-        mobileMenuToggle.classList.add('active');
-        mobileMenuOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
-
-    function closeMobileMenu() {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    function toggleMobileMenu() {
-        if (mobileMenuOverlay.classList.contains('active')) {
-            closeMobileMenu();
-        } else {
-            openMobileMenu();
-        }
-    }
-
-    // Event listeners for mobile menu
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    }
-
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', function(e) {
-            if (e.target === mobileMenuOverlay) {
-                closeMobileMenu();
-            }
-        });
-    }
-
-    // Close mobile menu when clicking on menu links
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-});
 
 // Newsletter form handling
-const newsletterForm = document.querySelector('.newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
+function bindNewsletter() {
+    const form = document.querySelector('.footer-newsletter .newsletter-form');
+    if (!form || form.dataset.bound === 'true') return;
+
+    form.dataset.bound = 'true';
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
         const email = this.querySelector('.newsletter-input').value;
-        
+
         if (email) {
-            // Here you would typically send the email to your backend
             console.log('Newsletter signup:', email);
-            
-            // Show success message (you can customize this)
+
             const btn = this.querySelector('.newsletter-btn');
             const originalText = btn.textContent;
             btn.textContent = '✓';
             btn.style.backgroundColor = '#ECFFB0';
-            
+
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.backgroundColor = '#1E1E1E';
@@ -103,6 +28,9 @@ if (newsletterForm) {
         }
     });
 }
+
+document.addEventListener('DOMContentLoaded', bindNewsletter);
+document.addEventListener('chipxy:footer-ready', bindNewsletter);
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -122,40 +50,6 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.section-title').forEach(title => {
     observer.observe(title);
 });
-
-// Mobile menu toggle (if needed in future)
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
-}
-
-// Add mobile menu button if screen is small
-function checkMobileMenu() {
-    if (window.innerWidth <= 768) {
-        const navContainer = document.querySelector('.nav-container');
-        const existingToggle = document.querySelector('.mobile-menu-toggle');
-        
-        if (!existingToggle) {
-            const toggle = document.createElement('button');
-            toggle.className = 'mobile-menu-toggle';
-            toggle.innerHTML = '☰';
-            toggle.style.cssText = `
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                color: var(--color-eerie-black);
-                cursor: pointer;
-                display: block;
-            `;
-            toggle.addEventListener('click', toggleMobileMenu);
-            navContainer.appendChild(toggle);
-        }
-    }
-}
-
-// Check on load and resize
-window.addEventListener('load', checkMobileMenu);
-window.addEventListener('resize', checkMobileMenu);
 
 // Hero Carousel Functionality with GSAP Animations
 document.addEventListener('DOMContentLoaded', function() {
@@ -389,54 +283,77 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     gsap.registerPlugin(ScrollTrigger, SplitText);
     
-    // 1. PERSONALIZED SECTION - Pin FIRST (affects layout for subsequent sections)
+    // 1. PERSONALIZED SECTION
     const personalizedSection = document.querySelector('.personalized-section');
     const personalizedTitle = document.querySelector('.personalized-title');
-    const personalizedDescription = document.querySelector('.personalized-description');
+    const personalizedDescriptions = document.querySelectorAll('.personalized-description');
     const personalizedCTA = document.querySelector('.personalized-cta');
+    const personalizedVisual = document.querySelector('.personalized-visual');
+    const personalizedCards = document.querySelectorAll('.personalized-product-card');
     
     if (personalizedSection && personalizedTitle) {
-        // Set initial state - all elements hidden
-        gsap.set([personalizedTitle, personalizedDescription, personalizedCTA], {
-            opacity: 0,
-            y: 50
-        });
-        
-        // Create timeline that animates based on scroll progress
-        const tl = gsap.timeline({
+        const personalizedTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: personalizedSection,
-                start: 'top top',
-                end: '+=150%',  // Explicit distance (tweak 100–200% to taste)
-                scrub: 1,
-                pin: true,
-                pinSpacing: true,
-                anticipatePin: 1
+                start: 'top 60%',
+                toggleActions: 'play none none reverse'
             }
         });
-        
-        // Animate elements in sequence based on scroll progress
-        tl.to(personalizedTitle, {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            ease: "expo.out"
-        })
-        .to(personalizedDescription, {
-            opacity: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "expo.out"
-        }, "-=0.2") // Start slightly before title finishes
-        .to(personalizedCTA, {
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "expo.out"
-        }, "-=0.2"); // Start slightly before description finishes
+
+        // if (personalizedTitle) {
+        //     personalizedTimeline.from(personalizedTitle, {
+        //         opacity: 0,
+        //         y: 40,
+        //         duration: 0.8,
+        //         ease: "power2.out"
+        //     });
+        // }
+
+        // if (personalizedDescriptions.length) {
+        //     personalizedTimeline.from(personalizedDescriptions, {
+        //         opacity: 0,
+        //         y: 35,
+        //         duration: 0.7,
+        //         stagger: 0.15,
+        //         ease: "power2.out"
+        //     }, "-=0.3");
+        // }
+
+        // if (personalizedCards.length) {
+        //     personalizedTimeline.from(personalizedCards, {
+        //         opacity: 0,
+        //         duration: 0.6,
+        //         stagger: 0.12,
+        //         ease: "power2.out"
+        //     }, "-=0.2");
+        // }
+
+        // if (personalizedCTA) {
+        //     personalizedTimeline.from(personalizedCTA, {
+        //         opacity: 0,
+        //         y: 30,
+        //         duration: 0.6,
+        //         ease: "power2.out"
+        //     }, "-=0.1");
+        // }
+
+        if (personalizedVisual) {
+            gsap.fromTo(personalizedVisual, {
+                y: -100
+            }, {
+                y: 100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: personalizedSection,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+        }
     }
     
-    // 2. QUOTE SECTION - After pin (calculates positions knowing about pin)
+    // 2. QUOTE SECTION
     const quoteText = document.querySelector('.quote-text');
     if (quoteText) {
         const quoteSplit = new SplitText(quoteText, {
@@ -451,8 +368,8 @@ document.addEventListener('DOMContentLoaded', function() {
             ease: "expo.out",
             scrollTrigger: {
                 trigger: '.quote-text',
-                start: 'top 80%-=100vh',  // Wait until it truly comes in
-                end: 'bottom 20%-=100vh',
+                start: 'top 85%',
+                end: 'bottom 30%',
                 scrub: true
             }
         });
@@ -462,20 +379,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutImage = document.querySelector('.about-image img');
     if (aboutImage) {
         gsap.fromTo(aboutImage, {
-            y: -150
+            y: -200
         }, {
-            y: -50,
+            y: 0,
             duration: 1,
             ease: "none",
             scrollTrigger: {
                 trigger: '.about-image img',
-                start: 'top bottom-=100vh',  // Avoid kicking in behind the pin
-                end: 'bottom top-=100vh',
+                start: 'top bottom',
+                end: 'bottom top',
                 scrub: true
             }
         });
     }
-    
+
+    const givingImage = document.querySelector('.giving-image');
+    if (givingImage) {
+        gsap.fromTo(givingImage, {
+            y: -200
+        }, {
+            y: 0,
+            duration: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.giving-image',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+    }
+ 
     // Refresh ScrollTrigger after all content is loaded to fix positioning
     window.addEventListener('load', () => {
         ScrollTrigger.refresh();
