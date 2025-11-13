@@ -338,10 +338,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // }
 
         if (personalizedVisual) {
+            // Check if screen is mobile (max-width: 768px)
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            
+            // Set y values based on screen size
+            // Desktop values
+            let yFrom = -100;
+            let yTo = 100;
+            let xValue = 0;
+            
+            // Mobile values (adjust these as needed)
+            if (isMobile) {
+                yFrom = 0; // TODO: Set mobile yFrom value
+                yTo = 250; // TODO: Set mobile yTo value
+                xValue = 20;
+            }
+            
             gsap.fromTo(personalizedVisual, {
-                y: -100
+                y: yFrom,
+                x: xValue
             }, {
-                y: 100,
+                y: yTo,
+                x: xValue,
                 ease: "none",
                 scrollTrigger: {
                     trigger: personalizedSection,
